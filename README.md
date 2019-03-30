@@ -3,7 +3,7 @@
 Some vi/vim-like movement and interaction across all Windows applications
 
 - Caps Lock as toggle
-- hjkl, 0, $, d, w -movements for moving the cursor
+- hjkl, 0, $, b, w -movements for moving the cursor
 
 - u for undo
 - d for deleting a selection
