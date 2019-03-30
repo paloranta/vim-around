@@ -1,4 +1,4 @@
-; https://github.com/paloranta/
+; https://github.com/paloranta/vim-around
 ; For Reference:
 ;
 ; Hotkey Modifiers
