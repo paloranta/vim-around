@@ -42,9 +42,23 @@ w::Send {Ctrl Down}{Right}{Ctrl Up}
 ; d-w for deleting the next word (the next continuous block of text)
 ; d-b for deleting previous word (the previous continuous block of text)
 ; d-d for deleting entire line from current cursor position (might be buggy)
+; c-w for changing the word from current cursor position
+; c-b for changing the word from current cursor position
+; Shift-a for appending to end of line and swapping to edit mode
+; a for appending to end of word
+; o for starting a new line and swapping to edit mode
+
 
 d & w::Send {Ctrl Down}{Shift Down}{Right}{Ctrl Up}{Shift Up}{Del}
 d & b::Send {Ctrl Down}{Shift Down}{Left}{Ctrl Up}{Shift Up}{Del}
+c & w::
+Send {Ctrl Down}{Shift Down}{Right}{Ctrl Up}{Shift Up}{Del}
+  Suspend
+Return
+c & b::
+Send {Ctrl Down}{Shift Down}{Left}{Ctrl Up}{Shift Up}{Del}
+  Suspend
+Return
 
 $d::
 KeyWait, d, T0.1	
@@ -61,3 +75,16 @@ KeyWait, d
 return
 
 u::Send ^z ; Ctrl-u for undoing
+
+a::
+  Send {Ctrl Down}{Right}{Ctrl Up}
+  Suspend
+return
++a::
+  Send {End}
+  Suspend
+return
+o::
+  Send {End}{Enter}
+  Suspend
+return
