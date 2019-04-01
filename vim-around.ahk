@@ -30,7 +30,7 @@ h::Send {Left}
 l::Send {Right}
 0::Send {Home}
 $::Send {End}
-å::Send {End} ; Using the otherwise useless (for me) "å" -key for this instead of the vi-default "$", which is awkward for my kb layout.
+;Ã¥::Send {End} ; Using the otherwise useless (for me) "Ã¥" -key for this instead of the vi-default "$", which is awkward for my kb layout.
 
 ; Jump words with b (previous) and w (next)
 b::Send {Ctrl Down}{Left}{Ctrl Up}
