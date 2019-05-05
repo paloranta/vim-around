@@ -2,9 +2,10 @@
 
 Some vi/vim-like movement and interaction across all Windows applications
 
-- Caps Lock as toggle
+- Caps Lock as toggle for edit mode / Vim mode
 - hjkl, 0, $, b, w -movements for moving the cursor
 
+- i for edit mode
 - u for undo
 - d for deleting a selection
 - dw for deleting the next word (the next continuous block of text)
