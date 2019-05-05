@@ -11,8 +11,10 @@
 #SingleInstance force
 SendMode Input 
 #KeyHistory 0 
+
 ^!r::Reload  ; Assign Ctrl-Alt-R as a hotkey to restart the script.
 ^e::ExitApp  ; Ctrl-E to end the script.
+;ToolTip, Vim-mode, A_ScreenWidth - 100, 0
 
 ;------------CAPSLOCK AS TOGGLE--------------
 ; This sets Caps Lock to toggle the script on an off
@@ -20,7 +22,20 @@ SendMode Input
 ; TODO: add double-tapping or long-pressing Caps Lock as Esc
 
 SetCapsLockState, AlwaysOff
-CapsLock::Suspend
+CapsLock::
+  Suspend
+  if A_IsSuspended {	
+    ToolTip, Edit mode, 4, 4
+  } else {
+    ToolTip, Vim mode, 4, 4	
+    SetTimer RemoveToolTip, 1000
+  }
+return
+
+RemoveToolTip:
+  ToolTip
+;  SetTimer, RemoveToolTip, Off
+return
 
 ;------------VI-like MOVEMENT KEYS-------------
 ; Toggle the script with Caps Lock for vi-like movement any application.
@@ -30,7 +45,7 @@ h::Send {Left}
 l::Send {Right}
 0::Send {Home}
 $::Send {End}
-;Ã¥::Send {End} ; Using the otherwise useless (for me) "Ã¥" -key for this instead of the vi-default "$", which is awkward for my kb layout.
+;å::Send {End} ; Using the otherwise useless (for me) "å" -key for this instead of the vi-default "$", which is awkward for my kb layout.
 
 ; Jump words with b (previous) and w (next)
 b::Send {Ctrl Down}{Left}{Ctrl Up}
@@ -50,7 +65,9 @@ w::Send {Ctrl Down}{Right}{Ctrl Up}
 
 
 d & w::Send {Ctrl Down}{Shift Down}{Right}{Ctrl Up}{Shift Up}{Del}
+Return
 d & b::Send {Ctrl Down}{Shift Down}{Left}{Ctrl Up}{Shift Up}{Del}
+Return
 c & w::
 Send {Ctrl Down}{Shift Down}{Right}{Ctrl Up}{Shift Up}{Del}
   Suspend
