@@ -2,6 +2,8 @@
 
 Some vi/vim-like movement and interaction across all Windows applications
 
+![example](vim-around.gif)
+
 - Caps Lock as toggle for edit mode / Vim mode
 - hjkl, 0, $, b, w -movements for moving the cursor
 
