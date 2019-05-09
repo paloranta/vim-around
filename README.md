@@ -5,16 +5,16 @@ Some vi/vim-like movement and interaction across all Windows applications
 ![example](vim-around.gif)
 
 - Caps Lock as toggle for edit mode / Vim mode
-- hjkl, 0, $, b, w -movements for moving the cursor
+- <kbd>h</kbd><kbd>j</kbd><kbd>k</kbd><kbd>l</kbd>, <kbd>0</kbd>, <kbd>$</kbd>, <kbd>b</kbd>, <kbd>w</kbd> -movements for moving the cursor
 
-- i for edit mode
-- u for undo
-- d for deleting a selection
-- dw for deleting the next word (the next continuous block of text)
-- db for deleting previous word (the previous continuous block of text)
-- dd for deleting entire line from current cursor position
-- cw for changing the word forward from current cursor position
-- cb for changing the word backward from current cursor position
-- Shift-a for appending to end of line and swapping to edit mode
-- a for appending to the end of word
-- o for starting a new line and swapping to edit mode
+- <kbd>i</kbd> for edit mode
+- <kbd>u</kbd> for undo
+- <kbd>d</kbd> for deleting a selection
+- <kbd>d</kbd><kbd>w</kbd> for deleting the next word (the next continuous block of text)
+- <kbd>d</kbd><kbd>b</kbd> for deleting previous word (the previous continuous block of text)
+- <kbd>d</kbd><kbd>d</kbd> for deleting entire line from current cursor position
+- <kbd>c</kbd><kbd>w</kbd> for changing the word forward from current cursor position
+- <kbd>c</kbd><kbd>b</kbd> for changing the word backward from current cursor position
+- <kbd>Shift</kbd>+<kbd>a</kbd> for appending to end of line and swapping to edit mode
+- <kbd>a</kbd> for appending to the end of word
+- <kbd>o</kbd> for starting a new line and swapping to edit mode
